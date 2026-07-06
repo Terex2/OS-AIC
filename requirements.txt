@@ -1,0 +1,40 @@
+# Core & Orchestration
+langchain
+langgraph
+langchain-community
+crewai
+autogen
+mcp
+
+# Web & Action
+browser-use
+playwright
+crawl4ai
+crawlee
+selenium
+
+# Data & Knowledge
+chromadb
+qdrant-client
+faiss-cpu
+docling
+unstructured
+
+# API & UI
+fastapi
+uvicorn
+streamlit
+gradio
+
+# Multimodal & Models
+openai-whisper
+TTS
+opencv-python
+openvino
+diffusers
+transformers
+ollama
+
+# Database
+psycopg2-binary
+sqlite3
