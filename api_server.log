@@ -1,0 +1,27 @@
+INFO:     Started server process [2204]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:45252 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45258 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45264 - "GET / HTTP/1.1" 200 OK
+INFO:     10.106.217.1:36648 - "HEAD /ask HTTP/1.1" 405 Method Not Allowed
+INFO:     10.106.217.1:36658 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     10.106.217.1:36670 - "GET /ask HTTP/1.1" 405 Method Not Allowed
+INFO:     10.106.217.1:36672 - "GET / HTTP/1.1" 200 OK
+INFO:     10.106.217.1:36676 - "GET /ask HTTP/1.1" 405 Method Not Allowed
+INFO:     10.106.217.1:36688 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.106.217.1:36700 - "GET / HTTP/1.1" 200 OK
+INFO:     10.106.217.1:36714 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.106.217.1:40454 - "GET / HTTP/1.1" 200 OK
+INFO:     10.106.217.1:40470 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.106.217.1:57758 - "GET / HTTP/1.1" 200 OK
+INFO:     10.106.217.1:57774 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.106.217.1:40030 - "GET /ask HTTP/1.1" 405 Method Not Allowed
+INFO:     10.106.217.1:50462 - "POST /ask HTTP/1.1" 200 OK
+INFO:     10.106.217.1:37926 - "POST /ask HTTP/1.1" 200 OK
+INFO:     10.106.217.1:47352 - "POST /ask HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2204]

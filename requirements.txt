@@ -38,3 +38,5 @@ ollama
 # Database
 psycopg2-binary
 sqlite3
+
+playwright

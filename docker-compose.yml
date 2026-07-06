@@ -11,19 +11,19 @@ services:
       - "11434:11434"
     restart: always
 
-  # واجهة المستخدم الرئيسية
-  open-webui:
-    image: ghcr.io/open-webui/open-webui:main
-    container_name: osaic-ui
-    depends_on:
-      - ollama
-    ports:
-      - "3000:8080"
-    environment:
-      - 'OLLAMA_BASE_URL=http://ollama:11434'
-    volumes:
-      - open-webui_data:/app/backend/data
-    restart: always
+  # واجهة المستخدم الرئيسية (اختياري، يمكن تشغيلها لاحقاً)
+  # open-webui:
+  #   image: ghcr.io/open-webui/open-webui:main
+  #   container_name: osaic-ui
+  #   depends_on:
+  #     - ollama
+  #   ports:
+  #     - "3000:8080"
+  #   environment:
+  #     - 'OLLAMA_BASE_URL=http://ollama:11434'
+  #   volumes:
+  #     - open-webui_data:/app/backend/data
+  #   restart: always
 
   # قاعدة بيانات المتجهات للذاكرة طويلة الأمد
   qdrant:
@@ -31,11 +31,12 @@ services:
     container_name: osaic-qdrant
     ports:
       - "6333:6333"
+      - "6334:6334" # For gRPC
     volumes:
       - qdrant_data:/qdrant/storage
     restart: always
 
-  # خدمة API الرئيسية (FastAPI)
+  # خدمة API الرئيسية (FastAPI) - الآن تتصل بـ Ollama و Qdrant
   api-gateway:
     build:
       context: .
@@ -46,6 +47,13 @@ services:
     depends_on:
       - ollama
       - qdrant
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - OLLAMA_HOST=ollama
+      - OLLAMA_PORT=11434
+    volumes:
+      - .:/app # Mount current directory to access all project files
     restart: always
 
 volumes:
